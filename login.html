@@ -2,20 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Iniciar Sesión</title>
+        <link rel="stylesheet" href="assets/css/main.css">
+        <title>Login</title>
     </head>
     <body>
         <form class="" action="index.html" method="post">
             <p>Usuario:</p>
             <input type="email"  id="email" name="usuario" value="" required/>
-            <div class="" id="estado-email"><br></div>
+            <div class="error" id="estado-email"><br></div>
 
             <p>Password:</p>
             <input type="password"  id="password" name="pass" value=""required/>
-            <div class="" id="estado-pass"><br></div>
+            <div class="error" id="estado-pass"><br></div>
 
             <input type="button" name="login" id="login" value="Login">
         </form>
         <script src="assets/js/app.js" charset="utf-8"></script>
+        <script src="assets/js/timeline.js" charset="utf-8"></script>
     </body>
 </html>

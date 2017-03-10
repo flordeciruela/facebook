@@ -6,9 +6,7 @@ window.addEventListener('load',function() {
     var emailInput = document.getElementById('email').value;
     var passInput = document.getElementById('password').value;
     var estadoEmail = document.getElementById('estado-email');
-    estadoEmail.style.color = "red";
     var estadoPass = document.getElementById('estado-pass');
-    estadoPass.style.color = "red";
 
     var users = [{ id:1, emailInput : "user1@facebook.com", passInput : "pass1", muro : "index.html?id=1"},
 							   { id:2, emailInput : "user2@facebook.com", passInput : "pass2", muro : "index.html?id=2"}];
@@ -37,14 +35,7 @@ window.addEventListener('load',function() {
 
 
                }
-/*
-https://www.w3schools.com/jsref/dom_obj_textarea.asp
-            function myFunction() {
-             var x = document.getElementById("post_input").value;
-             document.getElementById("post").innerHTML = x;
-           }
 
-*/
+    });
 
-  });
 });

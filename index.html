@@ -2,30 +2,30 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Mi Muro</title>
+        <title>Timeline</title>
     </head>
     <body>
 
         <div class="">
-            <textarea placeholder="¿Qué está pasando?" rows="4" cols="70" id="post_input"></textarea>
+            <textarea placeholder="¿Qué está pasando?" rows="4" cols="70" id="post_input" required></textarea>
             <br>
-            <select>
+            <select id="privacy">
                   <option value="amigos">Amigos</option>
                   <option value="publico">Público</option>
             </select>
-            <input type="button" name="" value="Publicar">
+            <input type="button" name="" value="Publicar" id="publicar">
         </div>
         <br>
         <div class="" id="filtrar">
             <a href="#">Público</a>
             <a href="#">Amigos</a>
         </div>
+        <br>
+        <section id="posts">
 
-        <div class="" id="posts">
-            <div class="" id="post"></div>
-        </div>
+        </section>
 
-        <script src="assets/js/app.js" charset="utf-8"></script>
+        <script src="assets/js/timeline.js" charset="utf-8"></script>
 
     </body>
 </html>
