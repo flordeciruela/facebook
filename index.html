@@ -2,25 +2,28 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/css/main.css">
         <title>Timeline</title>
     </head>
     <body>
-
-        <div class="">
-            <textarea placeholder="¿Qué está pasando?" rows="4" cols="70" id="post_input" required></textarea>
-            <br>
-            <select id="privacy">
-                  <option value="amigos">Amigos</option>
-                  <option value="publico">Público</option>
-            </select>
-            <input type="button" name="" value="Publicar" id="publicar">
-        </div>
-        <br>
-        <div class="" id="filtrar">
-            <a href="#">Público</a>
-            <a href="#">Amigos</a>
-        </div>
-        <br>
+        <section align="center" class="cuadro">
+                <div class="text">
+                    <textarea placeholder="¿Qué está pasando?" rows="4" cols="70" id="post_input" required></textarea>
+                    <br>
+                    <div class="butons_text">
+                        <select id="privacy">
+                              <option value="amigos">Amigos</option>
+                              <option value="publico">Público</option>
+                        </select>
+                        <input type="button" class="publicar" value="Publicar" id="publicar" onclick="createPost()">
+                    </div>
+                </div>
+                <br>
+                <div class="" id="filtrar">
+                    <a href="#">Público</a>
+                    <a href="#">Amigos</a>
+                </div>
+        </section>
         <section id="posts">
 
         </section>
