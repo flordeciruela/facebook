@@ -7,25 +7,20 @@
     </head>
     <body>
         <section align="center" class="cuadro">
-                <div class="text">
+                <div class="text" id="caja">
                     <textarea placeholder="¿Qué está pasando?" rows="4" cols="70" id="post_input" required></textarea>
                     <br>
-                    <div class="butons_text">
-                        <select id="privacy">
-                              <option value="amigos">Amigos</option>
-                              <option value="publico">Público</option>
-                        </select>
-                        <input type="button" class="publicar" value="Publicar" id="publicar" onclick="createPost()">
-                    </div>
-                </div>
-                <br>
-                <div class="" id="filtrar">
-                    <a href="#">Público</a>
-                    <a href="#">Amigos</a>
+                    <select id="privacy">
+                          <option value="amigos">Amigos</option>
+                          <option value="publico">Público</option>
+                    </select>
+                    <input type="button" class="publicar" value="Publicar" id="publicar">
                 </div>
         </section>
-        <section id="posts">
 
+        <section id="posts">
+                <a href="#" id="publico">Público</a>
+                <a href="#" id="amigos">Amigos</a>
         </section>
 
         <script src="assets/js/timeline.js" charset="utf-8"></script>

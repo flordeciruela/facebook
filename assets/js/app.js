@@ -8,8 +8,8 @@ window.addEventListener('load',function() {
     var estadoEmail = document.getElementById('estado-email');
     var estadoPass = document.getElementById('estado-pass');
 
-    var users = [{ id:1, emailInput : "user1@facebook.com", passInput : "pass1", muro : "index.html?id=1"},
-							   { id:2, emailInput : "user2@facebook.com", passInput : "pass2", muro : "index.html?id=2"}];
+    var users = [{ id:1, emailInput : "user1@facebook.com", passInput : "pass1", muro : "index.html?id=1", post: []},
+							   { id:2, emailInput : "user2@facebook.com", passInput : "pass2", muro : "index.html?id=2", post: []}];
 
                for (var i in users) { //para recorer los usuarios del array;
                     var done=0;
