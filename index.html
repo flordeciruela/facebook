@@ -7,15 +7,17 @@
     </head>
     <body>
         <section align="center" class="cuadro">
-                <div class="text" id="caja">
+                <form class="text" id="caja" method="post">
+
                     <textarea placeholder="¿Qué está pasando?" rows="4" cols="70" id="post_input" required></textarea>
                     <br>
                     <select id="privacy">
                           <option value="amigos">Amigos</option>
                           <option value="publico">Público</option>
                     </select>
-                    <input type="button" class="publicar" value="Publicar" id="publicar">
-                </div>
+                    <input type="submit" class="publicar" value="Publicar" id="publicar">
+
+                </form>
         </section>
 
         <section id="posts">

@@ -1,98 +1,112 @@
 
-  var contador = 0;
-  var amigos = new Array();
-  var publico = new Array();
+    var contador = 0;
+
+  document.getElementById('publicar').addEventListener('click',function(event) {
+    event.preventDefault();
+
+    var text = document.getElementById("post_input").value;
+    var privacy = document.getElementById('privacy').value;
+    var posts = document.getElementById('posts');
+
+        if (text == "") {alert("No has ingresado ningun texto");
+        }else{
+
+           var nuevoDiv = document.createElement('div');
+                          if (privacy == "amigos") {
+                              nuevoDiv.setAttribute("class", "amigos");
+                          } else {
+                              nuevoDiv.setAttribute("class", "publico");
+                          }
+
+           var nuevaTextarea = document.createElement('textarea');
+           var br = document.createElement('br');
+
+           nuevaTextarea.value=text;
+           nuevaTextarea.readOnly = "true";
+
+           var editar = document.createElement('a');
+           editar.setAttribute('href',"#");
+           editar.innerHTML = "Editar";
+
+                         editar.addEventListener('click',function() {
+                         contador++
+                         if (contador % 2 != 0) {
+                             nuevaTextarea.removeAttribute('readonly');
+                             editar.innerHTML = "Guardar";
+                         }else{
+                             nuevaTextarea.readOnly = "true";
+                             editar.innerHTML = "Editar";
+                             }
+                         });
+
+           var eliminar = document.createElement('a');
+           eliminar.setAttribute('href',"#");
+           eliminar.innerHTML = "Eliminar";
+
+                    eliminar.addEventListener('click',function() {
+                         if(confirm("¿Estas seguro de querer eliminar este post?") == true) {
+                            posts.removeChild(nuevoDiv); }
+                    });
 
 
-document.getElementById('publicar').addEventListener('click',function() {
 
-  var text = document.getElementById("post_input").value;
-  var privacy = document.getElementById('privacy').value;
-  var posts = document.getElementById('posts');
+           nuevoDiv.appendChild(nuevaTextarea);
+           nuevoDiv.appendChild(br);
+           nuevoDiv.appendChild(editar);
+           nuevoDiv.appendChild(eliminar);
+           posts.appendChild(nuevoDiv);
 
-      if (text == "") {alert("No has ingresado ningun texto");
-      }else{
+        }
 
-         var nuevoDiv = document.createElement('div');
-                        if (privacy == "amigos") {
-                            nuevoDiv.setAttribute("class", "amigos");
-                        } else {
-                            nuevoDiv.setAttribute("class", "publico");
-                        }
+        document.getElementById("caja").reset();
 
-         var nuevaTextarea = document.createElement('textarea');
-         var br = document.createElement('br');
+  });
 
-         nuevaTextarea.value=text;
-         nuevaTextarea.readOnly = "true";
-
-         var editar = document.createElement('a');
-         editar.setAttribute('href',"#");
-         editar.innerHTML = "Editar";
-
-                 editar.addEventListener('click',function() {
-                 contador++
-                 if (contador % 2 != 0) {
-                     nuevaTextarea.removeAttribute('readonly');
-                     editar.innerHTML = "Guardar";
-                 }else{
-                     nuevaTextarea.readOnly = "true";
-                     editar.innerHTML = "Editar";
-                     }
-                 });
-
-         var eliminar = document.createElement('a');
-         eliminar.setAttribute('href',"#");
-         eliminar.innerHTML = "Eliminar";
-
-                  eliminar.addEventListener('click',function() {
-                          posts.removeChild(nuevoDiv);
-                  });
-
-
-
-         nuevoDiv.appendChild(nuevaTextarea);
-         nuevoDiv.appendChild(br);
-         nuevoDiv.appendChild(editar);
-         nuevoDiv.appendChild(eliminar);
-         posts.appendChild(nuevoDiv);
-
+  var fPublico = document.getElementById('publico');
+  fPublico.addEventListener("click",function(){
+    var divs = document.getElementsByTagName('div');
+    for(var i = 0;i<divs.length;i++){
+      if(divs[i].classList == "publico"){
+        divs[i].style.display="block";
       }
+      else {
+        divs[i].style.display="none"
+      }
+    }
+  })
 
-     document.getElementById("caja").reset();
-               /*
-               document.getElementById("posts").innerHTML +=
-               "<div class=\'post\' contenteditable=\'false\' style=\'border:1px solid blue\'>"+text+
-               "<br><a href=\'#\' class=\'editor\'>Editar</a><a href=\'#\'>Eliminar</a></div>";
-               */
 
-});
-
-document.getElementById('publico').addEventListener('click',function() {
-
-        alert("Mostrando publicaciones de privacidad: público.");
-});
-
-document.getElementById('amigos').addEventListener('click',function() {
-
-        alert("Mostrando publicaciones de privacidad: amigos.");
-});
+  var fAmigos = document.getElementById('amigos');
+  fAmigos.addEventListener("click",function(){
+    var divs = document.getElementsByTagName('div');
+    for(var i = 0;i<divs.length;i++){
+      if(divs[i].classList == "amigos"){
+        divs[i].style.display="block";
+      }
+      else {
+        divs[i].style.display="none"
+      }
+    }
+  })
 
 /*
-         function Crear(privacidad, text){
+           function CrearPost(privacidad, text){
 
-          this.privacidad = privacidad;
-          this.text = text;
-          this.agregar = function(){
+            this.privacidad = privacidad;
+            this.text = text;
+            this.crear = function(){
 
-                              var ficha = document.createElement('div');
-                              var datos = document.createElement('p');
-                              datos.innerHTML += "Nombre: "+this.nombre+
-                                                 "<br>Edad: " +this.edad+
-                                                 "<br>País: " +this.pais;
+                                    var nuevoDiv = document.createElement('div');
+                                                   if (privacy == "amigos") {
+                                                       nuevoDiv.setAttribute("class", "amigos");
+                                                   } else {
+                                                       nuevoDiv.setAttribute("class", "publico");
+                                                   }
 
-                              ficha.appendChild(datos);
-                              return ficha;
-                              };
 
-          }*/
+
+                                    return nuevoDiv;
+                                    };
+
+            }
+            */
