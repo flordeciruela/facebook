@@ -6,18 +6,24 @@
         <title>Login</title>
     </head>
     <body>
-        <form class="" action="index.html" method="post" align="center" width="200">
-            <p>Usuario:</p>
-            <input type="email"  id="email" name="usuario" value="" required/>
-            <div class="error" id="estado-email"><br></div>
+        <header>
+          <div class="encabezado">
+                <img class="logo"src="assets/images/3.png" alt="">
+          </div>
+        </header>
+        <div class="login">
+          <form class="" action="index.html" method="post" align="center" width="200">
+              <h1>Sign in:</h1>
+              <input type="email" placeholder="Email:" id="email" name="usuario" value="" required/>
+              <div class="error" id="estado-email"><br></div>
 
-            <p>Password:</p>
-            <input type="password"  id="password" name="pass" value=""required/>
-            <div class="error" id="estado-pass"><br></div>
+              <input type="password" placeholder="Password:" id="password" name="pass" value=""required/>
+              <div class="error" id="estado-pass"><br></div>
 
-            <input type="button" name="login" class="log" id="login" value="Login">
-        </form>
+              <input type="button" name="login" class="log" id="login" value="Login">
+          </form>
+        </div>
+
         <script src="assets/js/app.js" charset="utf-8"></script>
-        <script src="assets/js/timeline.js" charset="utf-8"></script>
     </body>
 </html>

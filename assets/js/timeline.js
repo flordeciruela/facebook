@@ -1,12 +1,18 @@
 
-    var contador = 0;
-    var arrayPosts = new Array();
+window.addEventListener('load',function() {
+
+		var users = [{ id:1, emailInput : "user1@facebook.com", passInput : "pass1", muro : "index.html?id=1", allPosts: []},
+								 { id:2, emailInput : "user2@facebook.com", passInput : "pass2", muro : "index.html?id=2", allPosts: []}];
+								 
+    var clickCount = 0;
+		var userId = localStorage.getItem("userId");
+    var arrayPosts = users[parseInt(userId)].allPosts;
 
     function Post(privacy, text){
 
      this.privacy = privacy;
      this.text = text;
-     this.crear = function(){
+     this.crearPost = function(){
 
                              var nuevoDiv = document.createElement('div');
                                             if (this.privacy == "amigos") {
@@ -30,8 +36,8 @@
 
                              //Eventos para editar y eliminar posts:
                                    editar.addEventListener('click',function() {
-                                   contador++
-                                   if (contador % 2 != 0) {
+                                   clickCount++
+                                   if (clickCount % 2 != 0) {
                                        nuevaTextarea.removeAttribute('readonly');
                                        editar.innerHTML = "Guardar";
                                    }else{
@@ -55,7 +61,7 @@
      }
 
     document.getElementById('publicar').addEventListener('click',function(event) {
-      event.preventDefault();
+        event.preventDefault();
 
       var text = document.getElementById("post_input").value;
       var privacy = document.getElementById('privacy').value;
@@ -63,9 +69,8 @@
 
           if (text == "") {alert("No has ingresado ningun texto");
           }else{
-
-                arrayPosts.push(new Post(privacy, text));  //inserta objeto nuevo en Array
-                posts.appendChild(arrayPosts[arrayPosts.length -1].crear());
+                arrayPosts.push(new Post(privacy, text));  //inserta objeto nuevo Post en Array
+                posts.appendChild(arrayPosts[arrayPosts.length -1].crearPost()); //ultimo post se inserta en section posts
                }
 
           document.getElementById("caja").reset();
@@ -95,3 +100,5 @@
               }
            }
   })
+
+});
