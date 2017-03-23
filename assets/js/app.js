@@ -2,7 +2,7 @@
 window.addEventListener('load',function() {
 	var loginButton = document.getElementById('login');
 
-	var users = [{ id:0, emailInput : "user1@facebook.com", passInput : "pass1", muro : "index.html?id=1", allPosts: []},
+	var users = [{ id:0, emailInput : "user1@facebook.com", passInput : "pass1", muro : "index.html?id=0", allPosts: []},
 							 { id:0, emailInput : "user2@facebook.com", passInput : "pass2", muro : "index.html?id=2", allPosts: []}];
 	if(loginButton)
 	loginButton.addEventListener('click',function() {
