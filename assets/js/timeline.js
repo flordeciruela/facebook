@@ -51,7 +51,7 @@ window.addEventListener('load',function() {
 	                                  if(confirm("¿Estas seguro de querer eliminar este post?") == true) {
 	                                     posts.removeChild(nuevoDiv);
 																		 }
-																		 
+
 			                             });
 
 					                       nuevoDiv.appendChild(nuevaTextarea);

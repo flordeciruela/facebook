@@ -81,20 +81,17 @@ margin-top:15px;
 margin-bottom:10px;
 }
 
-.butons_text{
-
-}
-
 .publicar {
-    width: 10%;
+    width: 7%;
     background-color: #6d84b4;
     color: white;
-    padding: 10px 10px;
+    padding: 3px 3px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     -webkit-box-sizing: border-box;
+    font-size: 11px;
 }
 
 .publicar:hover {
@@ -118,4 +115,47 @@ form {
   color:red;
   font-size: 13px;
   font-family: sans-serif;
+}
+
+textarea {
+width: 30%;
+height: 5em;
+width: 350px;
+margin: 10px 0px 0px 0px;
+}
+
+a {
+margin: 0 2px;
+font-size: 12px;
+font-family: sans-serif;
+color: #90949c;
+text-decoration: none;
+margin: 0 0 0 8px;
+}
+
+a:hover {
+color: #7f7f7f;
+text-decoration: underline;
+}
+
+select {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+
+#privacy {
+margin: -8px 0px 0px 200px;
+}
+
+#publicar {
+
+}
+
+#amigos {
+margin: 0px 280px 0px 4px;
+color: #6d84b4;
+}
+
+#publico {
+color: #6d84b4;
 }
